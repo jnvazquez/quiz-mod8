@@ -1,0 +1,19 @@
+<form method="get" action="/quizes">
+    <p>Buscador:</p>
+    <input type="text" name="search" value="Buscar..." />
+    <input type="submit" value="Enviar" />
+</form>
+
+<br/>
+
+<table>
+  <% if (quizes !== null && quizes !== undefined) { %>
+      <% var i; for (i=0; i < quizes.length; i++) { %>        
+        <tr>
+          <td align="left"><a href="/quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
+        </tr> 
+      <% } %>
+  <% } else { %>
+    <tr><p>No se encontraron resultados</p></tr>
+  <% } %>
+</table>
